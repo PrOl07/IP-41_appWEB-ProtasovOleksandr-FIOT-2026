@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="D&D Master's Screen — вебзастосунок для Dungeon Master">
+
+    <title>D&D Master's Screen</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-content">
+
+        <div>
+            <h1>D&D Master's Screen</h1>
+            <p>Швидкий довідник для Dungeon Master</p>
+        </div>
+
+        <div class="header-badge">
+            D&D
+        </div>
+
+    </div>
+
+</header>
+
+
+<nav class="main-navigation">
+
+    <a href="index.html" class="active">
+        Головна
+    </a>
+
+    <a href="#character">
+        Character Sheets
+    </a>
+
+    <a href="#bestiary">
+        Bestiary
+    </a>
+
+    <a href="#battle">
+        Battle Tracker
+    </a>
+
+    <a href="#dice">
+        Dice Calculator
+    </a>
+
+</nav>
+
+
+<main>
+
+    <section class="hero">
+
+        <h2>Quick Reference</h2>
+
+        <p>
+            Основні підказки та правила для швидкої роботи
+            Dungeon Master під час ігрової сесії.
+        </p>
+
+    </section>
+
+
+    <!-- Картки з основними підказками -->
+
+    <section class="tips">
+
+        <article class="tip-card">
+
+            <h3>Ability Modifiers</h3>
+
+            <p>
+                Модифікатор характеристики використовується
+                під час перевірок характеристик, атак та
+                інших ігрових розрахунків.
+            </p>
+
+        </article>
+
+
+        <article class="tip-card">
+
+            <h3>Combat Order</h3>
+
+            <p>
+                На початку бою визначається Initiative,
+                після чого учасники виконують ходи
+                відповідно до встановленого порядку.
+            </p>
+
+        </article>
+
+
+        <article class="tip-card">
+
+            <h3>Armor Class</h3>
+
+            <p>
+                Armor Class визначає значення, яке повинен
+                перевищити результат атаки для успішного
+                попадання.
+            </p>
+
+        </article>
+
+    </section>
+
+
+    <!-- Таблиця -->
+
+    <section class="content-section">
+
+        <h2>Таблиця модифікаторів</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Значення</th>
+                    <th>Модифікатор</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>8–9</td>
+                    <td>-1</td>
+                </tr>
+
+                <tr>
+                    <td>10–11</td>
+                    <td>0</td>
+                </tr>
+
+                <tr>
+                    <td>12–13</td>
+                    <td>+1</td>
+                </tr>
+
+                <tr>
+                    <td>14–15</td>
+                    <td>+2</td>
+                </tr>
+
+                <tr>
+                    <td>16–17</td>
+                    <td>+3</td>
+                </tr>
+
+                <tr>
+                    <td>18–19</td>
+                    <td>+4</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- Зображення -->
+
+    <section class="content-section">
+
+        <h2>Dungeon Master Reference</h2>
+
+        <img
+            src="images/dnd-main.jpg"
+            alt="D&D Master's Screen"
+            class="main-image"
+        >
+
+    </section>
+
+
+    <!-- Маркірований список -->
+
+    <section class="content-section">
+
+        <h2>Основні можливості</h2>
+
+        <ul>
+
+            <li>Character Sheets</li>
+
+            <li>Bestiary</li>
+
+            <li>Battle Tracker</li>
+
+            <li>Dice Calculator</li>
+
+            <li>Game Tips</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- Нумерований список -->
+
+    <section class="content-section">
+
+        <h2>Порядок дій під час бою</h2>
+
+        <ol>
+
+            <li>Визначити Initiative.</li>
+
+            <li>Встановити порядок учасників.</li>
+
+            <li>Виконати ходи учасників.</li>
+
+            <li>Оновити HP та інші характеристики.</li>
+
+            <li>Перейти до наступного раунду.</li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- Форма -->
+
+    <section class="content-section">
+
+        <h2>Швидке створення персонажа</h2>
+
+        <form>
+
+            <label for="characterName">
+                Ім'я персонажа:
+            </label>
+
+            <input
+                type="text"
+                id="characterName"
+                name="characterName"
+                placeholder="Введіть ім'я"
+            >
+
+
+            <label for="characterClass">
+                Клас:
+            </label>
+
+            <input
+                type="text"
+                id="characterClass"
+                name="characterClass"
+                placeholder="Наприклад, Fighter"
+            >
+
+
+            <label for="level">
+                Рівень:
+            </label>
+
+            <input
+                type="number"
+                id="level"
+                name="level"
+                min="1"
+                max="20"
+            >
+
+
+            <button type="submit">
+                Створити персонажа
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Посилання на опис предметної області -->
+
+    <section class="content-section">
+
+        <h2>Про WEB-застосунок</h2>
+
+        <p>
+            Детальний опис предметної області,
+            бізнес-логіки та вимог до застосунку
+            розміщено на окремій сторінці.
+        </p>
+
+        <a href="about.html" class="button-link">
+            Переглянути опис предметної області
+        </a>
+
+    </section>
+
+
+    <!-- Тимчасові блоки майбутніх розділів -->
+
+    <section id="character" class="module-section">
+
+        <h2>Character Sheets</h2>
+
+        <p>
+            Розділ для роботи з листами персонажів.
+            Повноцінна реалізація буде виконана
+            у наступних лабораторних роботах.
+        </p>
+
+    </section>
+
+
+    <section id="bestiary" class="module-section">
+
+        <h2>Bestiary</h2>
+
+        <p>
+            Розділ для перегляду характеристик
+            монстрів.
+        </p>
+
+    </section>
+
+
+    <section id="battle" class="module-section">
+
+        <h2>Battle Tracker</h2>
+
+        <p>
+            Розділ для відстеження учасників
+            бойової сцени.
+        </p>
+
+    </section>
+
+
+    <section id="dice" class="module-section">
+
+        <h2>Dice Calculator</h2>
+
+        <p>
+            Розділ для виконання кидків гральних
+            кубиків.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        D&D Master's Screen | Лабораторна робота №1
+    </p>
+
+</footer>
+
+</body>
+
+</html>
