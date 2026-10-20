@@ -1,360 +1,304 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="D&D Master's Screen — вебзастосунок для Dungeon Master">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="D&D Master's Screen — вебзастосунок для Dungeon Master">
     <title>D&D Master's Screen</title>
-
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
 <header class="site-header">
-
     <div class="header-content">
-
         <div>
             <h1>D&D Master's Screen</h1>
             <p>Швидкий довідник для Dungeon Master</p>
         </div>
-
-        <div class="header-badge">
-            D&D
-        </div>
-
+        <div class="header-badge">D&D</div>
     </div>
-
 </header>
 
-
-<nav class="main-navigation">
-
-    <a href="index.html" class="active">
-        Головна
-    </a>
-
-    <a href="#character">
-        Character Sheets
-    </a>
-
-    <a href="#bestiary">
-        Bestiary
-    </a>
-
-    <a href="#battle">
-        Battle Tracker
-    </a>
-
-    <a href="#dice">
-        Dice Calculator
-    </a>
-
+<nav class="main-navigation" aria-label="Головна навігація">
+    <a href="#home" class="active" data-tab="home">Головна</a>
+    <a href="#character" data-tab="character">Character Sheets</a>
+    <a href="#bestiary" data-tab="bestiary">Bestiary</a>
+    <a href="#battle" data-tab="battle">Battle Tracker</a>
+    <a href="#dice" data-tab="dice">Dice Calculator</a>
 </nav>
-
 
 <main>
 
-    <section class="hero">
-
-        <h2>Quick Reference</h2>
-
-        <p>
-            Основні підказки та правила для швидкої роботи
-            Dungeon Master під час ігрової сесії.
-        </p>
-
-    </section>
-
-
-    <!-- Картки з основними підказками -->
-
-    <section class="tips">
-
-        <article class="tip-card">
-
-            <h3>Ability Modifiers</h3>
-
+    <!-- ГОЛОВНА -->
+    <section id="home" class="tab-content active">
+        <section class="hero">
+            <h2>Quick Reference</h2>
             <p>
-                Модифікатор характеристики використовується
-                під час перевірок характеристик, атак та
-                інших ігрових розрахунків.
+                Основні підказки та правила для швидкої роботи
+                Dungeon Master під час ігрової сесії.
             </p>
+        </section>
 
-        </article>
+        <section class="tips">
+            <article class="tip-card">
+                <h3>Ability Modifiers</h3>
+                <p>
+                    Модифікатор характеристики використовується під час
+                    перевірок характеристик, атак та інших ігрових розрахунків.
+                </p>
+            </article>
 
+            <article class="tip-card">
+                <h3>Combat Order</h3>
+                <p>
+                    На початку бою визначається Initiative, після чого
+                    учасники виконують ходи відповідно до встановленого порядку.
+                </p>
+            </article>
 
-        <article class="tip-card">
+            <article class="tip-card">
+                <h3>Armor Class</h3>
+                <p>
+                    Armor Class (AC) визначає складність влучання по персонажу
+                    або монстру. Результат атаки має дорівнювати AC або перевищувати його.
+                </p>
+            </article>
+        </section>
 
-            <h3>Combat Order</h3>
+        <section class="content-section">
+            <h2>Таблиця модифікаторів</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Значення характеристики</th>
+                        <th>Модифікатор</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>-5</td></tr>
+                    <tr><td>2–3</td><td>-4</td></tr>
+                    <tr><td>4–5</td><td>-3</td></tr>
+                    <tr><td>6–7</td><td>-2</td></tr>
+                    <tr><td>8–9</td><td>-1</td></tr>
+                    <tr><td>10–11</td><td>0</td></tr>
+                    <tr><td>12–13</td><td>+1</td></tr>
+                    <tr><td>14–15</td><td>+2</td></tr>
+                    <tr><td>16–17</td><td>+3</td></tr>
+                    <tr><td>18–19</td><td>+4</td></tr>
+                    <tr><td>20–21</td><td>+5</td></tr>
+                </tbody>
+            </table>
+            <p class="note">
+                Таблиця показує приклади модифікаторів за стандартною формулою
+                D&D 5e: округлення вниз від (значення характеристики − 10) / 2.
+            </p>
+        </section>
 
+        <section class="content-section">
+            <h2>Основні можливості</h2>
+            <ul>
+                <li>Character Sheets — збереження персонажів у браузері.</li>
+                <li>Bestiary — пошук і перегляд прикладів монстрів.</li>
+                <li>Battle Tracker — ініціатива, HP та порядок ходів.</li>
+                <li>Dice Calculator — кидки кубиків із різною кількістю граней.</li>
+                <li>Game Tips — швидкі підказки для майстра.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Порядок дій під час бою</h2>
+            <ol>
+                <li>Визначити Initiative для учасників.</li>
+                <li>Встановити порядок ходів за результатами ініціативи.</li>
+                <li>Виконати ходи учасників.</li>
+                <li>Оновити HP та інші характеристики.</li>
+                <li>Перейти до наступного раунду.</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2>Про WEB-застосунок</h2>
             <p>
-                На початку бою визначається Initiative,
-                після чого учасники виконують ходи
-                відповідно до встановленого порядку.
+                Детальний опис предметної області, бізнес-логіки та вимог
+                до застосунку розміщено на окремій сторінці.
             </p>
+            <a href="about.html" class="button-link">
+                Переглянути опис предметної області
+            </a>
+        </section>
+    </section>
 
-        </article>
+
+    <!-- CHARACTER SHEETS -->
+    <section id="character" class="tab-content" hidden>
+        <section class="hero">
+            <h2>Character Sheets</h2>
+            <p>Створюй персонажів і зберігай їх у цьому браузері.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Створення персонажа</h2>
+            <form id="characterForm">
+                <label for="characterName">Ім'я персонажа</label>
+                <input type="text" id="characterName" name="characterName"
+                       placeholder="Наприклад, Aria" required maxlength="60">
+
+                <label for="characterClass">Клас</label>
+                <select id="characterClass" name="characterClass" required>
+                    <option value="">Оберіть клас</option>
+                    <option>Barbarian</option>
+                    <option>Bard</option>
+                    <option>Cleric</option>
+                    <option>Druid</option>
+                    <option>Fighter</option>
+                    <option>Monk</option>
+                    <option>Paladin</option>
+                    <option>Ranger</option>
+                    <option>Rogue</option>
+                    <option>Sorcerer</option>
+                    <option>Warlock</option>
+                    <option>Wizard</option>
+                </select>
+
+                <label for="characterLevel">Рівень (1–20)</label>
+                <input type="number" id="characterLevel" min="1" max="20"
+                       value="1" required>
+
+                <label for="characterHP">Максимальні HP</label>
+                <input type="number" id="characterHP" min="1" max="999"
+                       value="10" required>
+
+                <button type="submit">Створити персонажа</button>
+            </form>
+            <p id="characterMessage" class="status-message" aria-live="polite"></p>
+        </section>
+
+        <section class="content-section">
+            <h2>Збережені персонажі</h2>
+            <div id="characterList" class="item-list">
+                <p>Поки що персонажів немає.</p>
+            </div>
+        </section>
+    </section>
 
 
-        <article class="tip-card">
+    <!-- BESTIARY -->
+    <section id="bestiary" class="tab-content" hidden>
+        <section class="hero">
+            <h2>Bestiary</h2>
+            <p>Шукай монстрів за назвою або типом.</p>
+        </section>
 
-            <h3>Armor Class</h3>
+        <section class="content-section">
+            <label for="monsterSearch">Пошук монстра</label>
+            <input type="search" id="monsterSearch"
+                   placeholder="Введіть назву або тип...">
 
-            <p>
-                Armor Class визначає значення, яке повинен
-                перевищити результат атаки для успішного
-                попадання.
+            <div id="monsterList" class="item-list">
+                <p>Завантаження бестіарію...</p>
+            </div>
+            <p class="note">
+                Це невеликий демонстраційний список, а не повний офіційний бестіарій.
+                Значення HP та AC наведені для прикладу.
             </p>
-
-        </article>
-
+        </section>
     </section>
 
 
-    <!-- Таблиця -->
+    <!-- BATTLE TRACKER -->
+    <section id="battle" class="tab-content" hidden>
+        <section class="hero">
+            <h2>Battle Tracker</h2>
+            <p>Додавай учасників бою та відстежуй ініціативу й HP.</p>
+        </section>
 
-    <section class="content-section">
+        <section class="content-section">
+            <h2>Додати учасника</h2>
+            <form id="battleForm">
+                <label for="combatantName">Ім'я учасника</label>
+                <input type="text" id="combatantName" required maxlength="60"
+                       placeholder="Наприклад, Goblin або Aria">
 
-        <h2>Таблиця модифікаторів</h2>
+                <label for="combatantInitiative">Initiative</label>
+                <input type="number" id="combatantInitiative" required
+                       min="-100" max="100" value="10">
 
-        <table>
+                <label for="combatantHP">Поточні HP</label>
+                <input type="number" id="combatantHP" required
+                       min="0" max="9999" value="10">
 
-            <thead>
+                <button type="submit">Додати учасника</button>
+            </form>
+            <p id="battleMessage" class="status-message" aria-live="polite"></p>
+        </section>
 
-                <tr>
-                    <th>Значення</th>
-                    <th>Модифікатор</th>
-                </tr>
+        <section class="content-section">
+            <div class="section-heading">
+                <h2>Порядок бою</h2>
+                <p>Раунд: <strong id="roundNumber">1</strong></p>
+            </div>
 
-            </thead>
+            <div class="button-row">
+                <button type="button" id="nextRoundButton">Наступний раунд</button>
+                <button type="button" id="clearBattleButton" class="secondary-button">
+                    Очистити бій
+                </button>
+            </div>
 
-            <tbody>
-
-                <tr>
-                    <td>8–9</td>
-                    <td>-1</td>
-                </tr>
-
-                <tr>
-                    <td>10–11</td>
-                    <td>0</td>
-                </tr>
-
-                <tr>
-                    <td>12–13</td>
-                    <td>+1</td>
-                </tr>
-
-                <tr>
-                    <td>14–15</td>
-                    <td>+2</td>
-                </tr>
-
-                <tr>
-                    <td>16–17</td>
-                    <td>+3</td>
-                </tr>
-
-                <tr>
-                    <td>18–19</td>
-                    <td>+4</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
+            <div id="battleList" class="item-list">
+                <p>Додай першого учасника бою.</p>
+            </div>
+        </section>
     </section>
 
 
-    <!-- Маркірований список -->
-
-    <section class="content-section">
-
-        <h2>Основні можливості</h2>
-
-        <ul>
-
-            <li>Character Sheets</li>
-
-            <li>Bestiary</li>
-
-            <li>Battle Tracker</li>
-
-            <li>Dice Calculator</li>
-
-            <li>Game Tips</li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- Нумерований список -->
-
-    <section class="content-section">
-
-        <h2>Порядок дій під час бою</h2>
-
-        <ol>
-
-            <li>Визначити Initiative.</li>
-
-            <li>Встановити порядок учасників.</li>
-
-            <li>Виконати ходи учасників.</li>
-
-            <li>Оновити HP та інші характеристики.</li>
-
-            <li>Перейти до наступного раунду.</li>
-
-        </ol>
-
-    </section>
-
-
-    <!-- Форма -->
-
-    <section class="content-section">
-
-        <h2>Швидке створення персонажа</h2>
-
-        <form>
-
-            <label for="characterName">
-                Ім'я персонажа:
-            </label>
-
-            <input
-                type="text"
-                id="characterName"
-                name="characterName"
-                placeholder="Введіть ім'я"
-            >
-
-
-            <label for="characterClass">
-                Клас:
-            </label>
-
-            <input
-                type="text"
-                id="characterClass"
-                name="characterClass"
-                placeholder="Наприклад, Fighter"
-            >
-
-
-            <label for="level">
-                Рівень:
-            </label>
-
-            <input
-                type="number"
-                id="level"
-                name="level"
-                min="1"
-                max="20"
-            >
-
-
-            <button type="submit">
-                Створити персонажа
-            </button>
-
-        </form>
-
-    </section>
-
-
-    <!-- Посилання на опис предметної області -->
-
-    <section class="content-section">
-
-        <h2>Про WEB-застосунок</h2>
-
-        <p>
-            Детальний опис предметної області,
-            бізнес-логіки та вимог до застосунку
-            розміщено на окремій сторінці.
-        </p>
-
-        <a href="about.html" class="button-link">
-            Переглянути опис предметної області
-        </a>
-
-    </section>
-
-
-    <!-- Тимчасові блоки майбутніх розділів -->
-
-    <section id="character" class="module-section">
-
-        <h2>Character Sheets</h2>
-
-        <p>
-            Розділ для роботи з листами персонажів.
-            Повноцінна реалізація буде виконана
-            у наступних лабораторних роботах.
-        </p>
-
-    </section>
-
-
-    <section id="bestiary" class="module-section">
-
-        <h2>Bestiary</h2>
-
-        <p>
-            Розділ для перегляду характеристик
-            монстрів.
-        </p>
-
-    </section>
-
-
-    <section id="battle" class="module-section">
-
-        <h2>Battle Tracker</h2>
-
-        <p>
-            Розділ для відстеження учасників
-            бойової сцени.
-        </p>
-
-    </section>
-
-
-    <section id="dice" class="module-section">
-
-        <h2>Dice Calculator</h2>
-
-        <p>
-            Розділ для виконання кидків гральних
-            кубиків.
-        </p>
-
+    <!-- DICE CALCULATOR -->
+    <section id="dice" class="tab-content" hidden>
+        <section class="hero">
+            <h2>Dice Calculator</h2>
+            <p>Кидай кубики та переглядай результати.</p>
+        </section>
+
+        <section class="content-section">
+            <form id="diceForm">
+                <label for="diceCount">Кількість кубиків</label>
+                <input type="number" id="diceCount" min="1" max="100"
+                       value="1" required>
+
+                <label for="diceSides">Тип кубика</label>
+                <select id="diceSides" required>
+                    <option value="4">D4</option>
+                    <option value="6" selected>D6</option>
+                    <option value="8">D8</option>
+                    <option value="10">D10</option>
+                    <option value="12">D12</option>
+                    <option value="20">D20</option>
+                    <option value="100">D100</option>
+                </select>
+
+                <label for="diceModifier">Додатковий модифікатор</label>
+                <input type="number" id="diceModifier" value="0"
+                       min="-10000" max="10000">
+
+                <button type="submit">Кинути кубики</button>
+            </form>
+
+            <div id="diceResult" class="result-panel" aria-live="polite">
+                <h3>Результат</h3>
+                <p>Налаштуй кидок і натисни кнопку.</p>
+            </div>
+        </section>
     </section>
 
 </main>
 
-
 <footer>
-
-    <p>
-        D&D Master's Screen | Лабораторна робота №1
-    </p>
-
+    <p>D&D Master's Screen | Лабораторна робота №1</p>
 </footer>
 
 </body>
-
 </html>
