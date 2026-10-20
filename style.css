@@ -1,5 +1,10 @@
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -10,6 +15,9 @@ body {
     line-height: 1.6;
 }
 
+[hidden] {
+    display: none !important;
+}
 
 /* HEADER */
 
@@ -22,7 +30,6 @@ body {
 .header-content {
     max-width: 1200px;
     margin: auto;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,17 +47,13 @@ body {
 .header-badge {
     width: 70px;
     height: 70px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border: 2px solid white;
     border-radius: 50%;
-
     font-weight: bold;
 }
-
 
 /* NAVIGATION */
 
@@ -58,31 +61,35 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     gap: 10px;
-
     padding: 15px;
-
     background-color: #38312a;
 }
 
 .main-navigation a {
     color: white;
     text-decoration: none;
-
     padding: 10px 18px;
-
     border: 1px solid #777;
     border-radius: 6px;
+    transition: background-color 0.2s ease;
 }
 
 .main-navigation a:hover,
-.main-navigation .active {
+.main-navigation a.active {
     background-color: #6d5a42;
 }
 
+.main-navigation a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+.button-link:focus-visible {
+    outline: 3px solid #c69c6d;
+    outline-offset: 3px;
+}
 
-/* MAIN */
+/* MAIN AND TABS */
 
 main {
     max-width: 1200px;
@@ -90,45 +97,47 @@ main {
     padding: 30px 20px;
 }
 
+.tab-content {
+    animation: fade-in 0.2s ease-in;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 /* HERO */
 
 .hero {
     text-align: center;
-
     padding: 35px;
-
     background-color: white;
-
     border: 1px solid #d0cbc2;
     border-radius: 10px;
-
     margin-bottom: 25px;
 }
 
 .hero h2 {
     font-size: 30px;
+    margin-top: 0;
 }
-
 
 /* TIPS */
 
 .tips {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
-
     margin-bottom: 30px;
 }
 
 .tip-card {
     background-color: white;
-
     padding: 22px;
-
     border: 1px solid #d0cbc2;
     border-radius: 10px;
 }
@@ -137,17 +146,13 @@ main {
     margin-top: 0;
 }
 
-
 /* SECTIONS */
 
 .content-section,
 .module-section {
     background-color: white;
-
     padding: 25px;
-
     margin-bottom: 25px;
-
     border: 1px solid #d0cbc2;
     border-radius: 10px;
 }
@@ -157,21 +162,31 @@ main {
     margin-top: 0;
 }
 
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.note {
+    color: #625b52;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
 
 /* TABLE */
 
 table {
     width: 100%;
-
     border-collapse: collapse;
 }
 
 th,
 td {
     padding: 12px;
-
     border: 1px solid #aaa;
-
     text-align: center;
 }
 
@@ -179,21 +194,15 @@ th {
     background-color: #e8e2d8;
 }
 
-
-/* IMAGE */
+/* IMAGES */
 
 .main-image {
     display: block;
-
     max-width: 100%;
-
     width: 650px;
-
     margin: auto;
-
     border-radius: 10px;
 }
-
 
 /* LISTS */
 
@@ -201,46 +210,43 @@ li {
     margin-bottom: 8px;
 }
 
-
-/* FORM */
+/* FORMS */
 
 form {
     display: flex;
-
     flex-direction: column;
-
     gap: 10px;
-
     max-width: 500px;
 }
 
-input {
-    padding: 10px;
+label {
+    font-weight: bold;
+    margin-top: 5px;
+}
 
+input,
+select {
+    width: 100%;
+    padding: 11px;
     border: 1px solid #aaa;
-
     border-radius: 5px;
-
-    font-size: 16px;
+    font: inherit;
+    background-color: white;
 }
 
 button,
 .button-link {
     display: inline-block;
-
     padding: 11px 18px;
-
     background-color: #38312a;
-
     color: white;
-
     border: none;
-
     border-radius: 6px;
-
     text-decoration: none;
-
+    font: inherit;
     cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
 }
 
 button:hover,
@@ -248,33 +254,145 @@ button:hover,
     background-color: #6d5a42;
 }
 
+form button {
+    margin-top: 10px;
+}
+
+.secondary-button {
+    background-color: #777;
+}
+
+.secondary-button:hover {
+    background-color: #555;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+/* ITEM CARDS */
+
+.item-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.item-card {
+    min-width: 0;
+    padding: 18px;
+    background-color: #faf8f4;
+    border: 1px solid #d0cbc2;
+    border-radius: 8px;
+}
+
+.item-card h3 {
+    margin-top: 0;
+    overflow-wrap: anywhere;
+}
+
+.item-card p {
+    margin: 7px 0;
+    overflow-wrap: anywhere;
+}
+
+.item-card button {
+    margin-top: 10px;
+}
+
+.item-card .item-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.item-card .item-actions button {
+    margin-top: 0;
+}
+
+.status-message {
+    min-height: 1.5em;
+    margin-bottom: 0;
+}
+
+.status-message.error {
+    color: #991b1b;
+}
+
+.status-message.success {
+    color: #166534;
+}
+
+/* BATTLE TRACKER */
+
+.hp-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.hp-controls button {
+    padding: 6px 11px;
+}
+
+.hp-value {
+    font-weight: bold;
+    min-width: 70px;
+}
+
+/* DICE RESULTS */
+
+.result-panel {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f4f1eb;
+    border: 1px solid #d0cbc2;
+    border-radius: 8px;
+}
+
+.result-panel h3 {
+    margin-top: 0;
+}
+
+.dice-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.dice-values {
+    overflow-wrap: anywhere;
+}
 
 /* FOOTER */
 
 footer {
     padding: 25px;
-
     text-align: center;
-
     background-color: #24201c;
-
     color: white;
 }
 
-
-/* ADAPTIVE */
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 800px) {
-
     .tips {
+        grid-template-columns: 1fr;
+    }
+
+    .item-list {
         grid-template-columns: 1fr;
     }
 
     .header-content {
         flex-direction: column;
-
         text-align: center;
-
         gap: 20px;
     }
 
@@ -284,5 +402,28 @@ footer {
 
     .main-navigation a {
         text-align: center;
+    }
+
+    .hero {
+        padding: 25px 18px;
+    }
+
+    .content-section {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    .header-content h1 {
+        font-size: 28px;
+    }
+
+    main {
+        padding: 20px 12px;
+    }
+
+    th,
+    td {
+        padding: 8px 5px;
     }
 }
