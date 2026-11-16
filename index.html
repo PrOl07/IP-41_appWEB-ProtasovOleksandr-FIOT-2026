@@ -24,11 +24,29 @@
 </header>
 
 <nav class="main-navigation" aria-label="Головна навігація">
-    <a href="#home" class="active" data-tab="home">Головна</a>
-    <a href="#character" data-tab="character">Character Sheets</a>
-    <a href="#bestiary" data-tab="bestiary">Bestiary</a>
-    <a href="#battle" data-tab="battle">Battle Tracker</a>
-    <a href="#dice" data-tab="dice">Dice Calculator</a>
+
+    <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navigationLinks"
+    >
+        <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        Меню
+    </button>
+
+    <div class="navigation-links" id="navigationLinks">
+        <a href="#home" class="active" data-tab="home">Головна</a>
+        <a href="#character" data-tab="character">Character Sheets</a>
+        <a href="#bestiary" data-tab="bestiary">Bestiary</a>
+        <a href="#battle" data-tab="battle">Battle Tracker</a>
+        <a href="#dice" data-tab="dice">Dice Calculator</a>
+    </div>
+
 </nav>
 
 <main>
