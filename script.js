@@ -2,10 +2,52 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
+   
     /* =====================================================
-       1. НАВІГАЦІЯ МІЖ ВКЛАДКАМИ
+       БУРГЕР-МЕНЮ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ
        ===================================================== */
 
+       const menuToggle = document.querySelector(".menu-toggle");
+    const navigationLinksContainer =
+        document.getElementById("navigationLinks");
+
+    function closeNavigationMenu() {
+        if (!menuToggle || !navigationLinksContainer) {
+            return;
+        }
+
+        navigationLinksContainer.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    }
+
+    if (menuToggle && navigationLinksContainer) {
+        menuToggle.addEventListener("click", function () {
+            const isOpen =
+                navigationLinksContainer.classList.toggle("is-open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+        });
+
+        // Закриваємо меню після вибору розділу.
+        navigationLinksContainer.addEventListener("click", function (event) {
+            if (event.target.closest("[data-tab]")) {
+                closeNavigationMenu();
+            }
+        });
+
+        // Закриваємо меню клавішею Escape.
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeNavigationMenu();
+            }
+        });
+    }
+     /* =====================================================
+       1. НАВІГАЦІЯ МІЖ ВКЛАДКАМИ
+       ===================================================== */
     const navigationLinks = document.querySelectorAll(
         ".main-navigation [data-tab]"
     );
