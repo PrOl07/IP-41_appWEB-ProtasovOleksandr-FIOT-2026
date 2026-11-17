@@ -1,6 +1,6 @@
 /* =========================================================
    D&D MASTER'S SCREEN — темна фентезійна тема
-  
+   Структуру HTML та логіку JavaScript не змінюємо.
    ========================================================= */
 
 :root {
@@ -707,21 +707,6 @@ footer p {
     gap: 7px;
 }
 
-/* Кнопка відображається на смартфонах */
-
-.menu-toggle {
-    display: flex;
-    width: 100%;
-}
-
-/* Посилання приховані до відкриття меню */
-
-.navigation-links {
-    display: none;
-    flex-direction: column;
-    gap: 7px;
-}
-
 /* Відкрите меню */
 
 .navigation-links.is-open {
@@ -745,7 +730,12 @@ footer p {
         transition-duration: 0.01ms !important;
     }
 }
-/* КОНТЕЙНЕР ПОСИЛАНЬ НАВІГАЦІЇ */
+
+/* =====================================================
+   БУРГЕР-МЕНЮ ТА АДАПТИВНА НАВІГАЦІЯ
+   ===================================================== */
+
+/* Контейнер посилань на великих екранах */
 
 .navigation-links {
     display: flex;
@@ -754,7 +744,7 @@ footer p {
     gap: 8px;
 }
 
-/* КНОПКА БУРГЕР-МЕНЮ */
+/* Кнопка меню прихована на комп'ютерах */
 
 .menu-toggle {
     display: none;
@@ -763,7 +753,7 @@ footer p {
     gap: 10px;
 }
 
-/* ІКОНКА БУРГЕР-МЕНЮ */
+/* Іконка бургер-меню */
 
 .menu-icon {
     display: flex;
@@ -778,33 +768,17 @@ footer p {
     background: var(--gold-bright);
     border-radius: 2px;
 }
-/* АДАПТАЦІЯ ДЛЯ АЛЬБОМНОЇ ОРІЄНТАЦІЇ */
 
-@media (min-width: 561px) and (max-width: 800px)
-       and (orientation: landscape) {
+/* Мобільна версія */
 
-    .tips {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .item-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    main {
-        padding-top: 20px;
-    }
-
-    .hero {
-        padding: 28px;
-    }
-}
-/* Мобільне бургер-меню */
 @media (max-width: 560px) {
+
     .main-navigation {
         display: flex;
         flex-direction: column;
         align-items: stretch;
+        padding: 12px;
+        gap: 7px;
     }
 
     .menu-toggle {
@@ -812,14 +786,18 @@ footer p {
         width: 100%;
     }
 
-    .navigation-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
+    /* За замовчуванням меню приховане */
+
+    .navigation-links:not(.is-open) {
+        display: none !important;
     }
+
+    /* Після натискання меню відкривається */
 
     .navigation-links.is-open {
         display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 
     .navigation-links a {
@@ -829,7 +807,8 @@ footer p {
     }
 }
 
-/* На великих екранах меню завжди відкрите */
+/* Комп'ютерна версія */
+
 @media (min-width: 561px) {
     .menu-toggle {
         display: none;
