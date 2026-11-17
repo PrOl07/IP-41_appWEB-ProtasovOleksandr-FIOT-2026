@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (menuToggle && navigationLinksContainer) {
+        // Початковий стан меню — закрите.
+        closeNavigationMenu();
         menuToggle.addEventListener("click", function () {
             const isOpen =
                 navigationLinksContainer.classList.toggle("is-open");
