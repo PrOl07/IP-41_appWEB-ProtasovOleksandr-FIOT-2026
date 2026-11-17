@@ -799,3 +799,43 @@ footer p {
         padding: 28px;
     }
 }
+/* Мобільне бургер-меню */
+@media (max-width: 560px) {
+    .main-navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .menu-toggle {
+        display: flex;
+        width: 100%;
+    }
+
+    .navigation-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation-links.is-open {
+        display: flex;
+    }
+
+    .navigation-links a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* На великих екранах меню завжди відкрите */
+@media (min-width: 561px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .navigation-links {
+        display: flex;
+    }
+}
